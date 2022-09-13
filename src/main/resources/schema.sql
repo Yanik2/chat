@@ -1,0 +1,1 @@
+create table message (id int not null auto_increment, user_name varchar(256), content varchar(1024), date_time timestamp, primary key(id))

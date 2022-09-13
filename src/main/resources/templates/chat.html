@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<table>
+    <tr>
+        <th>USERNAME</th>
+        <th>TIME</th>
+        <th>MESSAGE</th>
+    </tr>
+    <tr th:each="message : ${messages}">
+        <td th:text="${message.userName}"></td>
+        <td th:text="|${message.dateTime}:|"></td>
+        <td th:text="${message.content}"></td>
+    </tr>
+</table>
+
+<form action="/chat/messages" method="post">
+    <input type="text" name="content"/>
+    <input type="submit" name="submit" value="Submit"/>
+</form>
+
+<form action="/chat/messages" method="get">
+    <input type="submit" name="refresh" value="Refresh"/>
+</form>
+</body>
+</html>
